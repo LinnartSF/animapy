@@ -4,7 +4,6 @@ import numpy as np
 
 # create figure object
 fig = plt.figure()
-# load axis box
 
 # set axis limits
 plt.xlim(0,10)
