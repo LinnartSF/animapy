@@ -15,7 +15,7 @@ camera = Camera(fig)
 for i in range(10):
     ax.scatter(i, np.random.random())
     plt.pause(0.1)
-    camera.snap()
+    #camera.snap()
 
 animation = camera.animate()
 animation.save('animations/scatteranimation_celluloid.gif', writer='PillowWriter', fps=2)
