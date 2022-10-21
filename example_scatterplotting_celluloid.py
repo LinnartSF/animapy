@@ -18,4 +18,4 @@ for i in range(10):
     camera.snap()
 
 animation = camera.animate()
-animation.save('animation.gif', writer='PillowWriter', fps=2)
+animation.save('animations/scatteranimation_celluloid.gif', writer='PillowWriter', fps=2)
