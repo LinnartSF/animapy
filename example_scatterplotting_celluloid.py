@@ -6,16 +6,19 @@ import numpy as np
 # create figure object
 fig = plt.figure()
 # load axis box
-ax = plt.axes()
-# set axis limit
-ax.set_ylim(0, 1)
-ax.set_xlim(0, 10)
+
+plt.xlim(0,10)
+plt.ylim(0,1)
+
+plt.xlabel("x axis")
+plt.ylabel("y axis")
+plt.title("scatter plot animation")
 
 camera = Camera(fig)
 for i in range(10):
-    ax.scatter(i, np.random.random())
+    plt.scatter(i, np.random.random())
     plt.pause(0.1)
-    #camera.snap()
+    camera.snap()
 
 animation = camera.animate()
 animation.save('animations/scatteranimation_celluloid.gif', writer='PillowWriter', fps=2)
