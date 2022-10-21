@@ -1,19 +1,50 @@
+# importing relevant modules & packages
+
 import matplotlib.pyplot as plt
-import numpy as np
-from sklearn.linear_model import LinearRegression
+from matplotlib.animation import FuncAnimation
 import random
 
-x_values = []
-y_values = []
+# creating x and y coordinate data lists
+x = []
+y = []
 
-for _ in range(1000):
-    x_values.append(random.randint(0, 100))
-    y_values.append(random.randint(0, 100))
+# set Matplotlib figure size
+plt.figure(figsize=(5,5))
 
-    plt.xlim(0,100)
-    plt.ylim(0,100)
-    plt.scatter(x = x_values, y = y_values, color = "black")
-    
-    plt.pause(0.001)
+# create subplot figure and axes handlers
+fig = plt.figure()
 
-plt.show()
+# set labels
+plt.xlabel("x axis")
+plt.ylabel("y axis")
+plt.title("scatter plot example")
+
+# set axis limits
+plt.xlim(0,100)
+plt.ylim(0,100)
+
+# create scatterlot
+scatter = plt.scatter([],[], 
+                color='black')
+
+# define an animation function
+def frameAnimation(i):
+    # set x and y values
+    x.append(random.randint(0,100))
+    y.append(random.randint(0,100))
+    # update line plot
+    scatter = plt.scatter(x ,y, color="black")
+    # return line object
+    return scatter
+
+# create animation object
+animation = FuncAnimation(fig,                            # the figure to assign animation too
+                          func = frameAnimation,          # the frame rendering function
+                          frames = 500,                   # the steps and amount of frames
+                          interval = 10)                  # invertals is the time per frame, in ms
+
+# show animation
+#plt.show()
+
+# save animation
+animation.save('animations/scatterplotanimation.gif', writer = "Pillow", fps = 60)
