@@ -21,6 +21,6 @@ for i in range(10):
     plt.pause(0.1)
     camera.snap()
 
-# build animation from data and save it 
+# build animation from data and save it
 animation = camera.animate()
 animation.save('animations/scatteranimation_celluloid.gif', writer='PillowWriter', fps=2)
