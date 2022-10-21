@@ -16,8 +16,7 @@ xaxpos = [1,2]
 camera = Camera(fig)
 plt.xticks(xaxpos, labels=["tails","heads"])
 
-for i in range(1000):
-    fig.clf()
+for i in range(50):
     if random.randint(0,1) > 0:
         tailheads[1] += tailheads[1]
     else:
@@ -28,4 +27,4 @@ for i in range(1000):
 
 # build animation from data and save it
 animation = camera.animate()
-animation.save('animations/scatteranimation_celluloid.gif', writer='PillowWriter', fps=2)
+animation.save('animations/scatteranimation_celluloid.gif', writer='PillowWriter', fps=20)
