@@ -25,11 +25,11 @@ for i in range(1000):
     else:
         tailheads[0] = tailheads[0] + 1
 
-    plt.bar(xaxpos, tailheads)
-    plt.pause(0.1)
+    plt.bar(xaxpos, tailheads, color = "blue")
+    plt.pause(0.005)
     
     camera.snap()
 
 # build animation from data and save it
 animation = camera.animate()
-animation.save('animations/coinflipanimation_celluloid.gif', writer='PillowWriter', fps=300)
+animation.save('animations/coinflipanimation_celluloid.gif', writer='PillowWriter', fps=200)
